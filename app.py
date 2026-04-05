@@ -1,45 +1,45 @@
 import streamlit as st
 import pickle
 
-# ------------------ PAGE CONFIG ------------------
+# ------------------ PAGE ------------------
 st.set_page_config(page_title="🎬 Movie Recommender", layout="wide")
-
 st.title("🎬 Movie Recommendation System")
-st.write("Find similar movies using Machine Learning 🚀")
+st.write("ML-powered movie recommendations ")
 
-# ------------------ LOAD DATA ------------------
+# ------------------ LOAD ------------------
 @st.cache_data
 def load_data():
     movies = pickle.load(open("movies.pkl", "rb"))
-    return movies
+    tfidf = pickle.load(open("tfidf.pkl", "rb"))
+    kmeans = pickle.load(open("kmeans.pkl", "rb"))
+    return movies, tfidf, kmeans
 
-movies = load_data()
+movies, tfidf, kmeans = load_data()
 
-# ------------------ RECOMMEND FUNCTION ------------------
+# ------------------ RECOMMEND ------------------
 def recommend(movie_title):
     if movie_title not in movies['title'].values:
-        return ["Movie not found!"]
+        return ["Movie not found"]
 
-    cluster_num = movies[movies['title'] == movie_title]['cluster'].values[0]
-    similar_movies = movies[movies['cluster'] == cluster_num]['title'].values
+    cluster = movies[movies['title'] == movie_title]['cluster'].values[0]
+    similar = movies[movies['cluster'] == cluster]['title'].values
 
-    return [m for m in similar_movies if m != movie_title][:5]
+    return [m for m in similar if m != movie_title][:5]
 
 # ------------------ UI ------------------
 movie_list = movies['title'].values
 selected_movie = st.selectbox("🎥 Select a Movie", movie_list)
 
 if st.button("Recommend"):
-    recommendations = recommend(selected_movie)
+    results = recommend(selected_movie)
 
-    st.subheader(" Top Recommendations")
+    st.subheader("🔥 Top Recommendations")
 
-    col1, col2, col3, col4, col5 = st.columns(5)
-
-    for idx, col in enumerate([col1, col2, col3, col4, col5]):
-        with col:
-            st.markdown(f"{recommendations[idx]}")
+    cols = st.columns(5)
+    for i in range(len(results)):
+        with cols[i]:
+            st.write(results[i])
 
 # ------------------ FOOTER ------------------
 st.markdown("---")
-st.markdown("Built with ❤️ using Streamlit")
+st.write("Built with Streamlit")
