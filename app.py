@@ -9,7 +9,7 @@ st.write("ML-powered movie recommendations ")
 # ------------------ LOAD ------------------
 @st.cache_data
 def load_data():
-    movies = pickle.load(open("movies.pkl", "rb"))
+    movies = pickle.load(open("movies1.pkl", "rb"))
     tfidf = pickle.load(open("tfidf.pkl", "rb"))
     kmeans = pickle.load(open("kmeans.pkl", "rb"))
     return movies, tfidf, kmeans
