@@ -2,10 +2,10 @@ import streamlit as st
 import pickle
 import requests
 
-# ------------------ CONFIG ------------------
+
 st.set_page_config(page_title="🎬 Movie Recommender", layout="wide")
 
-# ------------------ CUSTOM CSS ------------------
+
 st.markdown("""
 <style>
 .block-container {
@@ -34,11 +34,11 @@ img {
 </style>
 """, unsafe_allow_html=True)
 
-# ------------------ TITLE ------------------
+
 st.markdown("<h1>🎬 Movie Recommendation System</h1>", unsafe_allow_html=True)
 st.caption("AI-powered movie suggestions with posters")
 
-# ------------------ TMDB API ------------------
+# ------------------ TMDB API ---------------
 API_KEY = "2020986cfc17a3040a697c0fa0c02656"
 
 def fetch_poster(movie_name):
@@ -51,7 +51,7 @@ def fetch_poster(movie_name):
             return "https://image.tmdb.org/t/p/w500" + poster_path
     return None
 
-# ------------------ LOAD ------------------
+
 @st.cache_data
 def load_data():
     movies = pickle.load(open("movies1.pkl", "rb"))
@@ -109,6 +109,6 @@ if recommend_btn:
 
             st.markdown('</div>', unsafe_allow_html=True)
 
-# ------------------ FOOTER ------------------
+
 st.markdown("---")
 st.caption("Built with ❤️ using Streamlit | Movie data powered by TMDB")
