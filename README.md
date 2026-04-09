@@ -1,10 +1,13 @@
 # Movie-Recommendation--System
 Movie Recommendation System built using Python, Pandas, Scikit-learn, KMeans, DBSCAN, TF-IDF). suggest similar movies based on clustering and content features.
 
-## 🎥 Demo
-![Demo](demo.gif)
+## Demo
+![Demo](Movierecommendsystem1.gif)
 
-## 🌐 Live App
+## App Screenshot
+![App Screenshot](Screenshot.png)
+
+## Live App
 [Try the App](https://movie-recommendation--system-ccimuxddbqjymadufjpv8g.streamlit.app/)
 
 ## Model
