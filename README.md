@@ -5,7 +5,7 @@ Movie Recommendation System built using Python, Pandas, Scikit-learn, KMeans, DB
 ![Demo](Movierecommendsystem1.gif)
 
 ## App Screenshot
-![App Screenshot](Screenshot.png)
+![App Screenshot](Screenshot.jpg)
 
 ## Live App
 [Try the App](https://movie-recommendation--system-ccimuxddbqjymadufjpv8g.streamlit.app/)
