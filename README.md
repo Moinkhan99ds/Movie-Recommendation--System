@@ -32,9 +32,9 @@ Users can select a movie from the available movie dataset through an interactive
 **Content-Based Recommendations**<br>
 The system recommends movies based on their content characteristics rather than user ratings or collaborative behavior.
 **K-Means Clustering**<br>
-Movies are grouped into clusters based on their transformed textual features. 
+Movies are grouped into clusters based on their transformed textual features.<br>
 **Top-5 Recommendations**<br>
-The application returns up to five movies from the selected movie's cluster. 
+The application returns up to five movies from the selected movie's cluster.<br>
 **Dynamic Movie Posters**<br>
 Movie posters are retrieved through the TMDB API to provide a more visual recommendation experience.
 **Interactive Web Application**<br>
