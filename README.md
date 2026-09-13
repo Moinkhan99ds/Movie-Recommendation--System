@@ -27,17 +27,17 @@ The interactive Streamlit application allows users to select a movie and generat
 
 ## Features
 
-Movie Selection
+**Movie Selection**
 Users can select a movie from the available movie dataset through an interactive Streamlit interface.
-Content-Based Recommendations
+**Content-Based Recommendations**
 The system recommends movies based on their content characteristics rather than user ratings or collaborative behavior.
-K-Means Clustering
+**K-Means Clustering**
 Movies are grouped into clusters based on their transformed textual features.
-Top-5 Recommendations
+**Top-5 Recommendations**
 The application returns up to five movies from the selected movie's cluster.
-Dynamic Movie Posters
+**Dynamic Movie Posters**
 Movie posters are retrieved through the TMDB API to provide a more visual recommendation experience.
-Interactive Web Application
+**Interactive Web Application**
 The complete recommendation workflow is deployed through Streamlit.
 
 ## Sample Results
